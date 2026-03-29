@@ -67,6 +67,10 @@ h6 {
   isolation: isolate;
 }
 
+#root {
+  --background: black;
+}
+
 body {
   background-color: grey;
 }

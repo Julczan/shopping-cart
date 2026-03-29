@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Test } from "./Navbar-styles";
+import { Navigation } from "./Navbar-styles";
+import { Button } from "./Navbar-styles";
 
 function Navbar() {
-  const [isActive, setIsActive] = useState(false);
-
   return (
-    <Test onClick={() => setIsActive(!isActive)} $primary={isActive}>
-      hello
-    </Test>
+    <Navigation>
+      <Button>Home Page</Button>
+      <Button>Shop Page</Button>
+      <Button>Cart</Button>
+    </Navigation>
   );
 }
 

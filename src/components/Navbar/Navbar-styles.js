@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-export const Test = styled.nav`
-  background: ${(props) => (props.$primary ? "#BF4F74" : "black")};
+export const Navigation = styled.nav`
   color: white;
   min-height: 60px;
+  background: var(--background);
+`;
+
+export const Button = styled.button`
+  background: grey;
+  padding: 10px 20px;
 `;

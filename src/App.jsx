@@ -1,5 +1,7 @@
-// App.jsx
+import Navbar from "./components/Navbar/Navbar";
 
-const App = () => <h1>Our First Test</h1>;
+function App() {
+  return <Navbar />;
+}
 
 export default App;
