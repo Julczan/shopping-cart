@@ -1,5 +1,6 @@
 import { Navigation } from "./Navbar-styles";
 import { Button } from "./Navbar-styles";
+import { Link } from "react-router";
 
 function Navbar() {
   return (
