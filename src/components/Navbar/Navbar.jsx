@@ -5,9 +5,9 @@ import { Link } from "react-router";
 function Navbar() {
   return (
     <Navigation>
-      <Button>Home Page</Button>
-      <Button>Shop Page</Button>
-      <Button>Cart</Button>
+      <Link to={"/"}>Home Page</Link>
+      <Link to={"/shop"}>Shop Page</Link>
+      <Link to={"/cart"}>Cart</Link>
     </Navigation>
   );
 }
