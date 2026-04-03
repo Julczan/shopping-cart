@@ -45,3 +45,25 @@ describe("Shop Page", () => {
     expect(errorMessage).toBeInTheDocument();
   });
 });
+
+describe("Shop Item", () => {
+  it("Displays card element with increment and decrement button", async () => {
+    render(<ShopPage />);
+
+    const incrementBtn = await screen.findByRole("button", {
+      name: /increment/i,
+    });
+    const decrementBtn = await screen.findByRole("button", {
+      name: /decrement/i,
+    });
+
+    const inputNumber = await screen.findByRole("spinbutton");
+
+    const image = await screen.findByRole("img");
+
+    expect(incrementBtn).toBeInTheDocument();
+    expect(inputNumber).toBeInTheDocument();
+    expect(decrementBtn).toBeInTheDocument();
+    expect(image).toBeInTheDocument();
+  });
+});

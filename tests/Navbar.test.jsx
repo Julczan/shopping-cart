@@ -4,7 +4,7 @@ import Navbar from "../src/components/Navbar/Navbar";
 import { MemoryRouter } from "react-router";
 
 describe("Navigation bar", () => {
-  it("Has 3 buttons", () => {
+  it("Has 3 buttons for navigation", () => {
     render(
       <MemoryRouter>
         <Navbar />

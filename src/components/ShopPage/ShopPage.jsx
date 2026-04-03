@@ -16,6 +16,9 @@ function ShopPage() {
           <ShopCard key={data.id}>
             <p>{data.title}</p>
             <img src={data.images[0]} alt="some" />
+            <button>Increment</button>
+            <input type="number"></input>
+            <button>Decrement</button>
           </ShopCard>
         ))}
     </>
