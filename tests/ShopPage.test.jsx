@@ -58,12 +58,15 @@ describe("Shop Item", () => {
     });
 
     const inputNumber = await screen.findByRole("spinbutton");
-
     const image = await screen.findByRole("img");
+    const addToCart = await screen.findByRole("button", {
+      name: /add to cart/i,
+    });
 
     expect(incrementBtn).toBeInTheDocument();
     expect(inputNumber).toBeInTheDocument();
     expect(decrementBtn).toBeInTheDocument();
     expect(image).toBeInTheDocument();
+    expect(addToCart).toBeInTheDocument();
   });
 });

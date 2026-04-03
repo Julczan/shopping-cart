@@ -1,10 +1,8 @@
 import useShopData from "../../api/useShopData";
-import { ShopCard } from "./ShopPage-styles";
+import ItemCard from "./ItemCard";
 
 function ShopPage() {
   const { shopData, error, loading } = useShopData();
-
-  console.log(shopData);
 
   return (
     <>
@@ -12,15 +10,7 @@ function ShopPage() {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {shopData &&
-        shopData.map((data) => (
-          <ShopCard key={data.id}>
-            <p>{data.title}</p>
-            <img src={data.images[0]} alt="some" />
-            <button>Increment</button>
-            <input type="number"></input>
-            <button>Decrement</button>
-          </ShopCard>
-        ))}
+        shopData.map((data) => <ItemCard data={data} key={data.id} />)}
     </>
   );
 }

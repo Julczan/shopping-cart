@@ -6,7 +6,7 @@ const useShopData = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=20")
+    fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=1")
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");

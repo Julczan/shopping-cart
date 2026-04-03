@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ShopCard = styled.div`
+export const Card = styled.div`
   height: 300px;
   width: 300px;
   background: white;
