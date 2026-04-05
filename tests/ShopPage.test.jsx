@@ -11,6 +11,13 @@ window.fetch = vi.fn(() => {
       id: 1,
       description: "lorem",
     },
+    {
+      images: ["hatImage"],
+      title: "Hat",
+      price: 5,
+      id: 2,
+      description: "A hat",
+    },
   ];
 
   return Promise.resolve({
@@ -47,26 +54,35 @@ describe("Shop Page", () => {
 });
 
 describe("Shop Item", () => {
-  it("Displays card element with increment and decrement button", async () => {
+  it("Displays card elements with increment and decrement buttons", async () => {
     render(<ShopPage />);
-
-    const incrementBtn = await screen.findByRole("button", {
+    const incrementBtns = await screen.findAllByRole("button", {
       name: /increment/i,
     });
-    const decrementBtn = await screen.findByRole("button", {
+    const decrementBtns = await screen.findAllByRole("button", {
       name: /decrement/i,
     });
 
-    const inputNumber = await screen.findByRole("spinbutton");
-    const image = await screen.findByRole("img");
-    const addToCart = await screen.findByRole("button", {
+    const inputNumbers = await screen.findAllByRole("spinbutton");
+    const images = await screen.findAllByRole("img");
+    const addToCartBtns = await screen.findAllByRole("button", {
       name: /add to cart/i,
     });
 
-    expect(incrementBtn).toBeInTheDocument();
-    expect(inputNumber).toBeInTheDocument();
-    expect(decrementBtn).toBeInTheDocument();
-    expect(image).toBeInTheDocument();
-    expect(addToCart).toBeInTheDocument();
+    expect(incrementBtns).toHaveLength(2);
+    expect(inputNumbers).toHaveLength(2);
+    expect(decrementBtns).toHaveLength(2);
+    expect(images).toHaveLength(2);
+    expect(addToCartBtns).toHaveLength(2);
   });
+
+  // it("Increments and decrements the value in input", async () => {
+  //   const incrementBtn = await screen.findByRole("button", {
+  //     name: /increment/i,
+  //   });
+  //   const decrementBtn = await screen.findByRole("button", {
+  //     name: /decrement/i,
+  //   });
+  //   const inputNumber = await screen.findByRole("spinbutton");
+  // });
 });
