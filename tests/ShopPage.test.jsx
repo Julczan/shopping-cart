@@ -2,7 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ShopPage from "../src/components/ShopPage/ShopPage";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router";
+import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
+import routes from "../src/routes";
 
 window.fetch = vi.fn(() => {
   const shopData = [
@@ -29,14 +30,17 @@ window.fetch = vi.fn(() => {
 
 describe("Shop Page", () => {
   it("Displays loading component while API request is in progress", () => {
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
+
     const loading = screen.getByText("Loading...");
 
     expect(loading).toBeInTheDocument();
   });
 
   it("Displays the card element when API is resolved", async () => {
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
 
     const shopData = await screen.findByText("Shoes");
 
@@ -48,7 +52,8 @@ describe("Shop Page", () => {
       return Promise.reject({ message: "API is down" });
     });
 
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
 
     const errorMessage = await screen.findByText("API is down");
     expect(errorMessage).toBeInTheDocument();
@@ -57,14 +62,15 @@ describe("Shop Page", () => {
 
 describe("Shop Item", () => {
   it("Displays card elements with increment, decrement buttons and value in input", async () => {
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
+
     const incrementBtns = await screen.findAllByRole("button", {
       name: /increment/i,
     });
     const decrementBtns = await screen.findAllByRole("button", {
       name: /decrement/i,
     });
-
     const inputNumbers = await screen.findAllByRole("spinbutton");
     const images = await screen.findAllByRole("img");
     const addToCartBtns = await screen.findAllByRole("button", {
@@ -82,14 +88,13 @@ describe("Shop Item", () => {
   it("Input value changes if number is provided", async () => {
     const user = userEvent.setup();
 
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
 
     const inputNumbers = await screen.findAllByRole("spinbutton");
-
     await user.type(inputNumbers[0], "{backspace}23");
     await user.type(inputNumbers[1], "{backspace}hello");
     await user.type(inputNumbers[1], "{backspace}hello");
-
     expect(inputNumbers[0]).toHaveValue(23);
     expect(inputNumbers[1]).toHaveValue(0);
   });
@@ -97,17 +102,16 @@ describe("Shop Item", () => {
   it("Input value changes on increment/decrement button click", async () => {
     const user = userEvent.setup();
 
-    render(<ShopPage />);
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
 
     const inputNumbers = await screen.findAllByRole("spinbutton");
     const incrementBtns = await screen.findAllByRole("button", {
       name: /increment/i,
     });
-
     await user.click(incrementBtns[0]);
     await user.type(inputNumbers[1], "{backspace}23");
     await user.click(incrementBtns[1]);
-
     expect(inputNumbers[0]).toHaveValue(2);
     expect(inputNumbers[1]).toHaveValue(24);
   });

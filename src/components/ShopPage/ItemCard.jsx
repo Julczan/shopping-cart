@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Card } from "./ShopPage-styles";
+import { useOutletContext } from "react-router";
 
 function ItemCard({ data }) {
+  const [productsCart, setProductsCart] = useOutletContext();
   const [quantity, setQuantity] = useState(data.quantity);
 
   function handleIncrementClick() {
@@ -10,6 +12,11 @@ function ItemCard({ data }) {
 
   function handleDecrementClick() {
     setQuantity(quantity - 1);
+  }
+
+  function addToCart(data) {
+    const product = { ...data, quantity: quantity };
+    setProductsCart([...productsCart, product]);
   }
 
   return (
@@ -26,7 +33,7 @@ function ItemCard({ data }) {
         onChange={(e) => setQuantity(+e.target.value)}
       ></input>
       <button onClick={handleIncrementClick}>Increment</button>
-      <button>Add to cart</button>
+      <button onClick={() => addToCart(data)}>Add to cart</button>
     </Card>
   );
 }

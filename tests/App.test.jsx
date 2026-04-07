@@ -39,14 +39,11 @@ describe("App component", () => {
   });
 
   it("Adds product to cart on AddToCart Button click", async () => {
-    const router = createMemoryRouter(routes);
     const user = userEvent.setup();
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
     render(<RouterProvider router={router} />);
 
-    const shopLink = screen.getByRole("link", { name: /shop page/i });
     const cartLink = screen.getByRole("link", { name: /cart/i });
-
-    await user.click(shopLink);
 
     const addToCartBtns = await screen.findAllByRole("button", {
       name: /add to cart/i,
