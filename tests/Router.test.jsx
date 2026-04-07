@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import routes from "../src/routes";
 import { render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
-import App from "../src/App";
 import userEvent from "@testing-library/user-event";
 
 describe("Router", () => {

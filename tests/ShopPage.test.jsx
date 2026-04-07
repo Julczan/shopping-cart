@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ShopPage from "../src/components/ShopPage/ShopPage";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router";
 
 window.fetch = vi.fn(() => {
   const shopData = [
