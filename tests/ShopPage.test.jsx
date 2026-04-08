@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import ShopPage from "../src/components/ShopPage/ShopPage";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import routes from "../src/routes";
+import Form from "../src/components/ShopPage/Form";
 
 window.fetch = vi.fn(() => {
   const shopData = [
