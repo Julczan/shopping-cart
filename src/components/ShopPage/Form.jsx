@@ -2,14 +2,16 @@ import { useState } from "react";
 import { useOutletContext } from "react-router";
 
 function Form({ data }) {
-  const [productsCart, setProductsCart] = useOutletContext();
+  const [productsCart, addToCart, removeFromCart] = useOutletContext();
   const [quantity, setQuantity] = useState(data.quantity);
 
-  function addToCart(e) {
+  function handleAddToCart(e) {
     e.preventDefault();
+    addToCart(data, quantity);
+  }
 
-    const product = { ...data, quantity: quantity };
-    setProductsCart([...productsCart, product]);
+  function handleRemoveFromCart() {
+    removeFromCart(data.id);
   }
 
   function handleIncrementClick() {
@@ -20,14 +22,14 @@ function Form({ data }) {
     setQuantity(quantity - 1);
   }
 
-  if (productsCart) {
-    productsCart.map((e) => {
-      console.log(e.id);
-    });
+  if (productsCart.length !== 0) {
+    if (productsCart.some((item) => item.id === data.id)) {
+      return <button onClick={handleRemoveFromCart}>Remove from cart</button>;
+    }
   }
 
   return (
-    <form onSubmit={addToCart}>
+    <form onSubmit={handleAddToCart}>
       <button type="button" onClick={handleDecrementClick}>
         Decrement
       </button>

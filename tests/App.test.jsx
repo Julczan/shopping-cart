@@ -100,7 +100,11 @@ describe("App component", () => {
     });
 
     await user.click(addToCartBtns[0]);
-    await user.click(addToCartBtns[0]);
+
+    const removeFromCartBtn = await screen.findByRole("button", {
+      name: /remove from cart/i,
+    });
+    await user.click(removeFromCartBtn);
 
     await user.click(cartLink);
     const cartMessage = await screen.findByText("No items found.");

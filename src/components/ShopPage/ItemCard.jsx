@@ -6,7 +6,7 @@ function ItemCard({ data }) {
     <Card>
       <img src={data.images[0]} />
       <p>{data.title}</p>
-      <p>{data.description}</p>
+      <p>{data.price}$</p>
       <Form data={data} />
     </Card>
   );
