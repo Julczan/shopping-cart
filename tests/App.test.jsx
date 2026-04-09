@@ -81,10 +81,29 @@ describe("App component", () => {
 
     await user.click(cartLink);
 
-    const cart = await screen.findByText("No items found.");
+    const cartMessage = await screen.findByText("No items found.");
 
     expect(inputNumbers[0]).toHaveValue(512);
     expect(inputNumbers[1]).toHaveValue(0);
-    expect(cart).toBeInTheDocument();
+    expect(cartMessage).toBeInTheDocument();
+  });
+
+  it("Add to Cart button removes the item from cart if it's already there", async () => {
+    const user = userEvent.setup();
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
+
+    const cartLink = screen.getByRole("link", { name: /cart/i });
+
+    const addToCartBtns = await screen.findAllByRole("button", {
+      name: /add to cart/i,
+    });
+
+    await user.click(addToCartBtns[0]);
+    await user.click(addToCartBtns[0]);
+
+    await user.click(cartLink);
+    const cartMessage = await screen.findByText("No items found.");
+    expect(cartMessage).toBeInTheDocument();
   });
 });

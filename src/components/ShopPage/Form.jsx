@@ -20,6 +20,12 @@ function Form({ data }) {
     setQuantity(quantity - 1);
   }
 
+  if (productsCart) {
+    productsCart.map((e) => {
+      console.log(e.id);
+    });
+  }
+
   return (
     <form onSubmit={addToCart}>
       <button type="button" onClick={handleDecrementClick}>
