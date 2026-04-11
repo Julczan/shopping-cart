@@ -15,10 +15,22 @@ function App() {
     setProductsCart(updatedCart);
   }
 
+  function updateQuantity(id, newQuantity) {
+    const updatedProducts = productsCart.map((product) => {
+      if (product.id === id) {
+        return { ...product, quantity: newQuantity };
+      }
+      return product;
+    });
+    setProductsCart(updatedProducts);
+  }
+
   return (
     <main>
       <Navbar />
-      <Outlet context={[productsCart, addToCart, removeFromCart]} />
+      <Outlet
+        context={{ productsCart, addToCart, updateQuantity, removeFromCart }}
+      />
     </main>
   );
 }

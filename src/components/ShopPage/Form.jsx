@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useOutletContext } from "react-router";
 
 function Form({ data }) {
-  const [productsCart, addToCart, removeFromCart] = useOutletContext();
+  const { productsCart, addToCart, removeFromCart } = useOutletContext();
   const [quantity, setQuantity] = useState(data.quantity);
 
   function handleAddToCart(e) {

@@ -1,17 +1,53 @@
 import { useOutletContext } from "react-router";
-import ItemCard from "../ShopPage/ItemCard";
+import { CartItem } from "./CartPage-styles";
 
 function CartPage() {
-  const [productsCart, setProductsCart] = useOutletContext();
+  const { productsCart, updateQuantity, removeFromCart } = useOutletContext();
 
-  if (productsCart.length !== 0) {
-    return productsCart.map((data) => <ItemCard data={data} key={data.id} />);
+  function handleIncrementQuantity(id, quantity) {
+    const newQuantity = quantity + 1;
+
+    updateQuantity(id, newQuantity);
+  }
+
+  function handleDecrementQuantity(id, quantity) {
+    const newQuantity = quantity - 1;
+
+    updateQuantity(id, newQuantity);
   }
 
   return (
     <>
       <h1>Cart Page</h1>
-      <p>No items found.</p>
+      {productsCart.length !== 0 ? (
+        productsCart.map((product) => (
+          <CartItem key={product.id}>
+            <img src={product.images[0]}></img>
+            <p>{product.title}</p>
+            <button
+              onClick={() =>
+                handleDecrementQuantity(product.id, product.quantity)
+              }
+            >
+              Decrement
+            </button>
+            <p>{product.quantity}</p>
+            <button
+              onClick={() =>
+                handleIncrementQuantity(product.id, product.quantity)
+              }
+            >
+              Increment
+            </button>
+            <p>{product.price * product.quantity} $</p>
+            <button onClick={() => removeFromCart(product.id)}>
+              Remove from cart
+            </button>
+          </CartItem>
+        ))
+      ) : (
+        <p>No items found.</p>
+      )}
     </>
   );
 }
