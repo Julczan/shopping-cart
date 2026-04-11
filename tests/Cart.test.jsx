@@ -124,29 +124,29 @@ describe("Cart Page", () => {
   });
 });
 
-// describe("Order Summary", () => {
-//   it("Displays the summed price of items in Cart", async () => {
-//     const user = userEvent.setup();
-//     const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
-//     render(<RouterProvider router={router} />);
+describe("Order Summary", () => {
+  it("Displays the summed price of items in Cart", async () => {
+    const user = userEvent.setup();
+    const router = createMemoryRouter(routes, { initialEntries: ["/shop"] });
+    render(<RouterProvider router={router} />);
 
-//     const cartLink = screen.getByRole("link", { name: /cart/i });
+    const cartLink = screen.getByRole("link", { name: /cart/i });
 
-//     const addToCartBtns = await screen.findAllByRole("button", {
-//       name: /add to cart/i,
-//     });
+    const addToCartBtns = await screen.findAllByRole("button", {
+      name: /add to cart/i,
+    });
 
-//     const inputNumbers = await screen.findAllByRole("spinbutton");
+    const inputNumbers = await screen.findAllByRole("spinbutton");
 
-//     await user.type(inputNumbers[0], "{backspace}20");
-//     await user.type(inputNumbers[1], "{backspace}10");
+    await user.type(inputNumbers[0], "{backspace}20");
+    await user.type(inputNumbers[1], "{backspace}10");
 
-//     await user.click(addToCartBtns[0]);
-//     await user.click(addToCartBtns[1]);
-//     await user.click(cartLink);
+    await user.click(addToCartBtns[0]);
+    await user.click(addToCartBtns[1]);
+    await user.click(cartLink);
 
-//     const priceSum = await screen.findByText("450");
+    const priceSum = await screen.findByText("450");
 
-//     expect(priceSum).toBeInTheDocument();
-//   });
-// });
+    expect(priceSum).toBeInTheDocument();
+  });
+});

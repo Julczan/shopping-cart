@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router";
 import { CartItem } from "./CartPage-styles";
+import OrderSummary from "./OrderSummary";
 
 function CartPage() {
   const { productsCart, updateQuantity, removeFromCart } = useOutletContext();
@@ -50,6 +51,7 @@ function CartPage() {
       ) : (
         <p>No items found.</p>
       )}
+      <OrderSummary />
     </>
   );
 }
