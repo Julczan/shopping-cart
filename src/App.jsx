@@ -27,7 +27,7 @@ function App() {
 
   return (
     <main>
-      <Navbar />
+      <Navbar products={productsCart} />
       <Outlet
         context={{ productsCart, addToCart, updateQuantity, removeFromCart }}
       />

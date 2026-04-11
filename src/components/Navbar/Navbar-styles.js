@@ -4,6 +4,7 @@ export const Navigation = styled.nav`
   color: white;
   min-height: 60px;
   background: var(--background);
+  display: flex;
 `;
 
 export const Button = styled.button`

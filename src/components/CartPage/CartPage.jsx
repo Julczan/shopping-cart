@@ -32,7 +32,7 @@ function CartPage() {
             >
               Decrement
             </button>
-            <p>{product.quantity}</p>
+            <p>Qty: {product.quantity}</p>
             <button
               disabled={product.quantity >= 99}
               onClick={() =>
