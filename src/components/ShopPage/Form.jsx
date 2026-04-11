@@ -29,23 +29,34 @@ function Form({ data }) {
   }
 
   return (
-    <form onSubmit={handleAddToCart}>
-      <button type="button" onClick={handleDecrementClick}>
-        Decrement
-      </button>
-      <input
-        id="quantity-input"
-        type="number"
-        min={1}
-        max={99}
-        value={quantity}
-        onChange={(e) => setQuantity(+e.target.value)}
-      />
-      <button type="button" onClick={handleIncrementClick}>
-        Increment
-      </button>
-      <button type="submit">Add to cart</button>
-    </form>
+    <>
+      <p>{data.price * quantity}$</p>
+      <form onSubmit={handleAddToCart}>
+        <button
+          disabled={quantity <= 1}
+          type="button"
+          onClick={handleDecrementClick}
+        >
+          Decrement
+        </button>
+        <input
+          id="quantity-input"
+          type="number"
+          min={1}
+          max={99}
+          value={quantity}
+          onChange={(e) => setQuantity(+e.target.value)}
+        />
+        <button
+          disabled={quantity >= 99}
+          type="button"
+          onClick={handleIncrementClick}
+        >
+          Increment
+        </button>
+        <button type="submit">Add to cart</button>
+      </form>
+    </>
   );
 }
 

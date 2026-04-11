@@ -25,7 +25,7 @@ function CartPage() {
             <img src={product.images[0]}></img>
             <p>{product.title}</p>
             <button
-              disabled={product.quantity === 1}
+              disabled={product.quantity <= 1}
               onClick={() =>
                 handleDecrementQuantity(product.id, product.quantity)
               }
@@ -34,7 +34,7 @@ function CartPage() {
             </button>
             <p>{product.quantity}</p>
             <button
-              disabled={product.quantity === 99}
+              disabled={product.quantity >= 99}
               onClick={() =>
                 handleIncrementQuantity(product.id, product.quantity)
               }

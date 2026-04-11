@@ -84,7 +84,7 @@ describe("App component", () => {
     const cartMessage = await screen.findByText("No items found.");
 
     expect(inputNumbers[0]).toHaveValue(512);
-    expect(inputNumbers[1]).toHaveValue(0);
+    expect(inputNumbers[1]).toHaveValue(1);
     expect(cartMessage).toBeInTheDocument();
   });
 
