@@ -72,7 +72,9 @@ h6 {
   --text-primary: #f5eccd;
   --text-secondary: #f5eccdc9;
   --btn-primary: #1b998b;
+  --btn-disabled: #072a26;
   --btn-secondary: #62929e;
+  --btn-remove: #902a14;
 }
 
 body {
@@ -84,18 +86,4 @@ body {
 a {
   color: var(--text-primary);
   text-decoration: none;
-}
-
-.embla__viewport {
-  overflow: hidden;
-}
-
-.embla__container {
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-}
-
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
 }

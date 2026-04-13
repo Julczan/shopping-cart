@@ -10,6 +10,7 @@ export const HomeStyled = styled.div`
 
 export const Title = styled.h1`
   color: var(--text-primary);
+  align-self: center;
 `;
 
 export const SubText = styled.p`

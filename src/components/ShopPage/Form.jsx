@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router";
+import { AddBtn, RemoveBtn, StyledBtn, StyledForm } from "./ShopPage-styles";
+import { CircleMinus, CirclePlus, ShoppingCart } from "lucide-react";
 
 function Form({ data }) {
   const { productsCart, addToCart, removeFromCart } = useOutletContext();
@@ -24,21 +26,32 @@ function Form({ data }) {
 
   if (productsCart.length !== 0) {
     if (productsCart.some((item) => item.id === data.id)) {
-      return <button onClick={handleRemoveFromCart}>Remove from cart</button>;
+      return (
+        <>
+          <p>{data.price * quantity}$</p>
+          <RemoveBtn
+            aria-label="remove from cart"
+            onClick={handleRemoveFromCart}
+          >
+            <ShoppingCart />
+          </RemoveBtn>
+        </>
+      );
     }
   }
 
   return (
     <>
       <p>{data.price * quantity}$</p>
-      <form onSubmit={handleAddToCart}>
-        <button
+      <StyledForm onSubmit={handleAddToCart}>
+        <StyledBtn
           disabled={quantity <= 1}
           type="button"
           onClick={handleDecrementClick}
+          aria-label="decrement"
         >
-          Decrement
-        </button>
+          <CircleMinus />
+        </StyledBtn>
         <input
           id="quantity-input"
           type="number"
@@ -47,15 +60,18 @@ function Form({ data }) {
           value={quantity}
           onChange={(e) => setQuantity(+e.target.value)}
         />
-        <button
+        <StyledBtn
           disabled={quantity >= 99}
           type="button"
           onClick={handleIncrementClick}
+          aria-label="increment"
         >
-          Increment
-        </button>
-        <button type="submit">Add to cart</button>
-      </form>
+          <CirclePlus />
+        </StyledBtn>
+        <AddBtn type="submit" aria-label="add to cart">
+          <ShoppingCart />
+        </AddBtn>
+      </StyledForm>
     </>
   );
 }
