@@ -68,14 +68,34 @@ h6 {
 }
 
 #root {
-  --background: #030027;
-  --text: #f2f3d9;
+  --background-dark: #0d0221;
+  --text-primary: #f5eccd;
+  --text-secondary: #f5eccdc9;
+  --btn-primary: #1b998b;
+  --btn-secondary: #62929e;
 }
 
 body {
-  background-color: #151e3f;
+  --background-light: #392f5a;
+  background-color: var(--background-light);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a {
-  color: var(--text);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
