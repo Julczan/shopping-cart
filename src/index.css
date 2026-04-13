@@ -68,9 +68,14 @@ h6 {
 }
 
 #root {
-  --background: black;
+  --background: #030027;
+  --text: #f2f3d9;
 }
 
 body {
-  background-color: grey;
+  background-color: #151e3f;
+}
+
+a {
+  color: var(--text);
 }

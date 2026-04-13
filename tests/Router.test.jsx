@@ -10,7 +10,7 @@ describe("Router", () => {
     const user = userEvent.setup();
     render(<RouterProvider router={router} />);
 
-    const shopLink = screen.getByRole("link", { name: /shop page/i });
+    const shopLink = screen.getByRole("link", { name: /shop/i });
 
     expect(shopLink).toBeInTheDocument();
     await user.click(shopLink);
