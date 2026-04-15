@@ -6,7 +6,7 @@ import {
   CheckoutBtn,
 } from "./CartPage-styles";
 import OrderSummary from "./OrderSummary";
-import { SubText, Title } from "../HomePage/HomePage-styles";
+import { StyledLink, SubText, Title } from "../HomePage/HomePage-styles";
 import {
   Card,
   CardsGrid,
@@ -83,7 +83,7 @@ function CartPage() {
         ) : (
           <>
             <SubText>No items found.</SubText>
-            <CheckoutBtn>Shop now</CheckoutBtn>
+            <StyledLink to={"/shop"}>Shop now</StyledLink>
           </>
         )}
       </CardsGrid>

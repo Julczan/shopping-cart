@@ -53,6 +53,10 @@ export const StyledForm = styled.form`
   justify-content: space-around;
 `;
 
+export const ItemTitle = styled.p`
+  font-weight: bold;
+`;
+
 export const StyledImg = styled.img`
   height: 300px;
   width: 300px;
@@ -63,6 +67,7 @@ export const StyledBtn = styled.button`
   color: ${(props) =>
     props.disabled ? "var(--btn-disabled)" : "var(--btn-primary)"};
   border: none;
+  cursor: pointer;
 `;
 
 export const AddBtn = styled(StyledBtn)`

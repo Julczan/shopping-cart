@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router";
 
 export const HomeStyled = styled.div`
   display: flex;
@@ -6,6 +7,15 @@ export const HomeStyled = styled.div`
   align-items: center;
   height: 90vh;
   justify-content: center;
+`;
+
+export const StyledLink = styled(Link)`
+  color: var(--text-primary);
+  font-weight: bold;
+  border: 2px solid var(--btn-primary);
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
 `;
 
 export const Title = styled.h1`

@@ -1,4 +1,10 @@
-import { HomeStyled, StyledSpan, SubText, Title } from "./HomePage-styles";
+import {
+  HomeStyled,
+  StyledLink,
+  StyledSpan,
+  SubText,
+  Title,
+} from "./HomePage-styles";
 
 function HomePage() {
   return (
@@ -8,6 +14,7 @@ function HomePage() {
       <SubText>
         Just give me the <StyledSpan>money</StyledSpan>
       </SubText>
+      <StyledLink to={"/shop"}>Shop Now</StyledLink>
     </HomeStyled>
   );
 }
