@@ -1,5 +1,10 @@
 import { useOutletContext } from "react-router";
-import { ButtonsDiv, CartItem, CartPageStyled } from "./CartPage-styles";
+import {
+  ButtonsDiv,
+  CartItem,
+  CartPageStyled,
+  CheckoutBtn,
+} from "./CartPage-styles";
 import OrderSummary from "./OrderSummary";
 import { SubText, Title } from "../HomePage/HomePage-styles";
 import {
@@ -11,7 +16,12 @@ import {
   StyledBtn,
   StyledImg,
 } from "../ShopPage/ShopPage-styles";
-import { CircleMinus, CirclePlus, ShoppingCart } from "lucide-react";
+import {
+  CheckCheck,
+  CircleMinus,
+  CirclePlus,
+  ShoppingCart,
+} from "lucide-react";
 
 function CartPage() {
   const { productsCart, updateQuantity, removeFromCart } = useOutletContext();
@@ -71,7 +81,10 @@ function CartPage() {
             </Card>
           ))
         ) : (
-          <SubText>No items found.</SubText>
+          <>
+            <SubText>No items found.</SubText>
+            <CheckoutBtn>Shop now</CheckoutBtn>
+          </>
         )}
       </CardsGrid>
       <OrderSummary />
