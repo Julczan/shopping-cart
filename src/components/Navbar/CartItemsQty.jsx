@@ -1,6 +1,8 @@
+import { CartQty } from "./Navbar-styles";
+
 function CartItemsQty({ products }) {
   if (products.length !== 0) {
-    return <p>{products.length}</p>;
+    return <CartQty>{products.length}</CartQty>;
   }
 
   return "";

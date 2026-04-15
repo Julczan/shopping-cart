@@ -10,8 +10,8 @@ function Navbar({ products }) {
         <Link to={"/"}>Home</Link>
         <Link to={"/shop"}>Shop</Link>
         <Link to={"/cart"}>Cart</Link>
+        <CartItemsQty products={products} />
       </NavLinks>
-      <CartItemsQty products={products} />
     </Navigation>
   );
 }
