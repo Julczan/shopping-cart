@@ -7,13 +7,13 @@ export const HomeStyled = styled.div`
   align-items: center;
   height: 90vh;
   justify-content: center;
+  gap: 20px;
 `;
 
 export const StyledLink = styled(Link)`
   color: var(--text-primary);
   font-weight: bold;
   border: 2px solid var(--btn-primary);
-  margin-top: 20px;
   padding: 10px 20px;
   border-radius: 5px;
 `;

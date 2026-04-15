@@ -9,7 +9,9 @@ export const CartItem = styled.div`
   border: black solid 2px;
 `;
 
-export const CartPageStyled = styled(ShopStyled)``;
+export const CartPageStyled = styled(ShopStyled)`
+  text-align: center;
+`;
 
 export const ButtonsDiv = styled.div`
   display: flex;

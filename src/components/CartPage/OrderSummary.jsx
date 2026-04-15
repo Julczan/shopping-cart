@@ -30,7 +30,7 @@ function OrderSummary() {
       <SumTitle>Order Summary</SumTitle>
       <SubText>Number of items: {summedQuantity}</SubText>
       <SubText>
-        Summed price: <DecoratedText>{priceSum}$</DecoratedText>
+        Summed price: <DecoratedText>{priceSum} $</DecoratedText>
       </SubText>
 
       {productsCart.length !== 0 ? (

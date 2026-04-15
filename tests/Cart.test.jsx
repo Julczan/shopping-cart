@@ -58,17 +58,17 @@ describe("Cart Page", () => {
       name: /decrement/i,
     });
     const quantity = await screen.findByText("Qty: 1");
-    const price = await screen.findByText("20$");
+    const price = await screen.findByText("20 $");
 
     await user.click(incrementBtn);
 
     expect(quantity).toHaveTextContent("Qty: 2");
-    expect(price).toHaveTextContent("40$");
+    expect(price).toHaveTextContent("40 $");
 
     await user.click(decrementBtn);
 
     expect(quantity).toHaveTextContent("Qty: 1");
-    expect(price).toHaveTextContent("20$");
+    expect(price).toHaveTextContent("20 $");
   });
 
   it("Stops decremeting when quantity is out of range", async () => {
@@ -145,7 +145,7 @@ describe("Order Summary", () => {
     await user.click(addToCartBtns[1]);
     await user.click(cartLink);
 
-    const priceSum = await screen.findByText("450");
+    const priceSum = await screen.findByText("450 $");
 
     expect(priceSum).toBeInTheDocument();
   });

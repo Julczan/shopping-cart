@@ -14,7 +14,7 @@ function HomePage() {
       <SubText>
         Just give me the <StyledSpan>money</StyledSpan>
       </SubText>
-      <StyledLink to={"/shop"}>Shop Now</StyledLink>
+      <StyledLink to={"/shop"}>Spend Now</StyledLink>
     </HomeStyled>
   );
 }

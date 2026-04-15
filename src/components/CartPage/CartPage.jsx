@@ -83,7 +83,7 @@ function CartPage() {
         ) : (
           <>
             <SubText>No items found.</SubText>
-            <StyledLink to={"/shop"}>Shop now</StyledLink>
+            <StyledLink to={"/shop"}>Spend now</StyledLink>
           </>
         )}
       </CardsGrid>
