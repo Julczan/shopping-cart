@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const ShopStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  padding: 40px 0;
 `;
 
 export const Card = styled.div`
   background: var(--background-dark);
-  border: black solid 2px;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -16,6 +16,32 @@ export const Card = styled.div`
   gap: 10px;
   padding: 10px;
   position: relative;
+  height: 430px;
+  text-align: center;
+  @media (min-width: 500px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+`;
+
+export const CardsGrid = styled.div`
+  display: grid;
+  gap: 40px;
+  justify-content: center;
+`;
+
+export const Description = styled.p`
+  display: none;
+  @media (min-width: 500px) {
+    display: block;
+  }
+`;
+
+export const ItemInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const StyledForm = styled.form`
