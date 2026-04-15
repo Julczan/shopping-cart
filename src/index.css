@@ -83,6 +83,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+p {
+  text-wrap: pretty;
+  max-width: 600px;
+}
+
 a {
   color: var(--text-primary);
   text-decoration: none;

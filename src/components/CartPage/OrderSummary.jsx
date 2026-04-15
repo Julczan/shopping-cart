@@ -1,4 +1,6 @@
 import { useOutletContext } from "react-router";
+import { CheckoutBtn, StyledSum, SumTitle } from "./CartPage-styles";
+import { SubText } from "../HomePage/HomePage-styles";
 
 function OrderSummary() {
   const { productsCart } = useOutletContext();
@@ -13,10 +15,12 @@ function OrderSummary() {
   }
 
   return (
-    <div>
-      Order Summary
-      <p>{priceSum}</p>
-    </div>
+    <StyledSum>
+      <SumTitle>Order Summary</SumTitle>
+      <SubText>Number of items: {productsCart.length}</SubText>
+      <SubText>Summed price: {priceSum}$</SubText>
+      <CheckoutBtn>Checkout</CheckoutBtn>
+    </StyledSum>
   );
 }
 export default OrderSummary;

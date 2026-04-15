@@ -5,7 +5,7 @@ export const ShopStyled = styled.div`
   flex-direction: column;
   gap: 40px;
   padding: 40px 0px;
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     padding: 40px 10px;
   }
 `;
@@ -22,7 +22,7 @@ export const Card = styled.div`
   height: 430px;
   border-radius: 5px;
   text-align: center;
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     flex-direction: row;
     justify-content: space-evenly;
   }
@@ -36,7 +36,7 @@ export const CardsGrid = styled.div`
 
 export const Description = styled.p`
   display: none;
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     display: block;
   }
 `;
