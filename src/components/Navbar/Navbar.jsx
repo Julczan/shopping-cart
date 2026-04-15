@@ -5,7 +5,7 @@ import { Link } from "react-router";
 function Navbar({ products }) {
   return (
     <Navigation>
-      <Logo>Money</Logo>
+      <Logo>Cents</Logo>
       <NavLinks>
         <Link to={"/"}>Home</Link>
         <Link to={"/shop"}>Shop</Link>

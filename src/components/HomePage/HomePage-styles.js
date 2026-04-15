@@ -16,3 +16,9 @@ export const Title = styled.h1`
 export const SubText = styled.p`
   color: var(--text-secondary);
 `;
+
+export const StyledSpan = styled.span`
+  color: var(--text-primary);
+  text-decoration: wavy underline var(--btn-primary);
+  text-underline-offset: 3px;
+`;

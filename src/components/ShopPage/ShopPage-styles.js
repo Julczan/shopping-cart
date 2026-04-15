@@ -20,6 +20,7 @@ export const Card = styled.div`
   padding: 10px;
   position: relative;
   height: 430px;
+  border-radius: 5px;
   text-align: center;
   @media (min-width: 500px) {
     flex-direction: row;
