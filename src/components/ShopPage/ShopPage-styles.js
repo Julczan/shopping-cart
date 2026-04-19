@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { slideIn } from "../HomePage/HomePage-styles";
 
 export const ShopStyled = styled.div`
@@ -90,6 +90,25 @@ export const RemoveBtn = styled(AddBtn)`
   color: var(--btn-remove);
 `;
 
+export const l3 = keyframes`
+
+to{transform: rotate(.5turn)
+`;
+
 export const Loader = styled.div`
-  padding-top: 100px;
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #514b82;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: ${l3} 1s infinite;
 `;

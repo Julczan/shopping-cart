@@ -10,7 +10,7 @@ function ShopPage() {
     <ShopStyled>
       <Title>Shop Page</Title>
       <CardsGrid>
-        {loading && <Loader>Loading...</Loader>}
+        {loading && <Loader></Loader>}
         {error && <p>{error}</p>}
         {shopData &&
           shopData.map((data) => (
