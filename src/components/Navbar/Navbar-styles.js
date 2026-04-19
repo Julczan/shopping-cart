@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router";
+
+export const popUp = keyframes`
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+    }
+    to{
+      transform: translateY(0);  
+      opacity: 1;
+    `;
 
 export const Navigation = styled.nav`
   color: white;
@@ -41,6 +51,7 @@ export const CartQty = styled.div`
   text-align: center;
   background: var(--btn-remove);
   border-radius: 50%;
+  animation: ${popUp} 250ms;
 `;
 
 export const NavLink = styled(Link)`
