@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { slideIn } from "../HomePage/HomePage-styles";
 
 export const ShopStyled = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ export const Card = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
   }
+  animation: ${slideIn} 1s;
 `;
 
 export const CardsGrid = styled.div`
@@ -68,6 +70,14 @@ export const StyledBtn = styled.button`
     props.disabled ? "var(--btn-disabled)" : "var(--btn-primary)"};
   border: none;
   cursor: pointer;
+  border-radius: 40px;
+  transition: transform 250ms;
+  &:hover {
+    transform: translateY(-2px);
+  }
+  :active {
+    transform: translateY(2px);
+  }
 `;
 
 export const AddBtn = styled(StyledBtn)`
@@ -78,4 +88,8 @@ export const AddBtn = styled(StyledBtn)`
 
 export const RemoveBtn = styled(AddBtn)`
   color: var(--btn-remove);
+`;
+
+export const Loader = styled.div`
+  padding-top: 100px;
 `;

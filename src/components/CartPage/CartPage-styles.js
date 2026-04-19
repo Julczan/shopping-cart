@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CardsGrid, ShopStyled, StyledBtn } from "../ShopPage/ShopPage-styles";
-import { StyledSpan } from "../HomePage/HomePage-styles";
+import { slideIn, StyledSpan } from "../HomePage/HomePage-styles";
 
 export const CartItem = styled.div`
   height: 300px;
@@ -11,6 +11,7 @@ export const CartItem = styled.div`
 
 export const CartPageStyled = styled(ShopStyled)`
   text-align: center;
+  animation: ${slideIn} 1s;
 `;
 
 export const ButtonsDiv = styled.div`

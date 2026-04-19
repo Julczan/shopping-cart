@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router";
+
+export const slideIn = keyframes`
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+    }
+    to{
+      transform: translateY(0);  
+      opacity: 1;
+    }
+`;
 
 export const HomeStyled = styled.div`
   display: flex;
@@ -8,6 +19,8 @@ export const HomeStyled = styled.div`
   height: 90vh;
   justify-content: center;
   gap: 20px;
+  transform: translateY;
+  animation: ${slideIn} 1s;
 `;
 
 export const StyledLink = styled(Link)`
@@ -16,6 +29,13 @@ export const StyledLink = styled(Link)`
   border: 2px solid var(--btn-primary);
   padding: 10px 20px;
   border-radius: 5px;
+  transition: transform 250ms;
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export const Title = styled.h1`

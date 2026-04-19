@@ -1,7 +1,7 @@
 import useShopData from "../../api/useShopData";
 import { Title } from "../HomePage/HomePage-styles";
 import ItemCard from "./ItemCard";
-import { CardsGrid, ShopStyled } from "./ShopPage-styles";
+import { CardsGrid, Loader, ShopStyled } from "./ShopPage-styles";
 
 function ShopPage() {
   const { shopData, error, loading } = useShopData();
@@ -10,7 +10,7 @@ function ShopPage() {
     <ShopStyled>
       <Title>Shop Page</Title>
       <CardsGrid>
-        {loading && <p>Loading...</p>}
+        {loading && <Loader>Loading...</Loader>}
         {error && <p>{error}</p>}
         {shopData &&
           shopData.map((data) => (
