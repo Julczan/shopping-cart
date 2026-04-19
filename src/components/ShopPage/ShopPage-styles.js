@@ -11,6 +11,12 @@ export const ShopStyled = styled.div`
   }
 `;
 
+export const StyledImg = styled.img`
+  height: 300px;
+  width: 300px;
+  transition: transform 250ms;
+`;
+
 export const Card = styled.div`
   background: var(--background-dark);
   color: var(--text-primary);
@@ -28,6 +34,9 @@ export const Card = styled.div`
     justify-content: space-evenly;
   }
   animation: ${slideIn} 1s;
+  &:hover ${StyledImg} {
+    transform: scale(1.03);
+  }
 `;
 
 export const CardsGrid = styled.div`
@@ -57,11 +66,6 @@ export const StyledForm = styled.form`
 
 export const ItemTitle = styled.p`
   font-weight: bold;
-`;
-
-export const StyledImg = styled.img`
-  height: 300px;
-  width: 300px;
 `;
 
 export const StyledBtn = styled.button`
