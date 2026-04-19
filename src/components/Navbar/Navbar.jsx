@@ -4,7 +4,7 @@ import { Logo, Navigation, NavLink, NavLinks } from "./Navbar-styles";
 function Navbar({ products }) {
   return (
     <Navigation>
-      <Logo>Cents</Logo>
+      <Logo to={"/"}>Cents</Logo>
       <NavLinks>
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/shop"}>Shop</NavLink>

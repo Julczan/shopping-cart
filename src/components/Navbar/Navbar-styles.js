@@ -20,8 +20,10 @@ export const Button = styled.button`
   padding: 10px 20px;
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled(Link)`
   color: var(--text);
+  font-size: 2rem;
+  font-weight: bold;
 `;
 
 export const NavLinks = styled.div`
