@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router";
 
 export const Navigation = styled.nav`
   color: white;
@@ -38,4 +39,13 @@ export const CartQty = styled.div`
   text-align: center;
   background: var(--btn-remove);
   border-radius: 50%;
+`;
+
+export const NavLink = styled(Link)`
+  text-decoration: underline 0.15em rgb(27, 153, 139, 0);
+  transition: text-decoration-color 300ms;
+  text-underline-offset: 3px;
+  &:hover {
+    text-decoration-color: rgb(27, 153, 139, 1);
+  }
 `;

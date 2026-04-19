@@ -1,15 +1,14 @@
 import CartItemsQty from "./CartItemsQty";
-import { Logo, Navigation, NavLinks } from "./Navbar-styles";
-import { Link } from "react-router";
+import { Logo, Navigation, NavLink, NavLinks } from "./Navbar-styles";
 
 function Navbar({ products }) {
   return (
     <Navigation>
       <Logo>Cents</Logo>
       <NavLinks>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/shop"}>Shop</Link>
-        <Link to={"/cart"}>Cart</Link>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/shop"}>Shop</NavLink>
+        <NavLink to={"/cart"}>Cart</NavLink>
         <CartItemsQty products={products} />
       </NavLinks>
     </Navigation>
